@@ -26,15 +26,20 @@ jobs:
         node-version: ${{ matrix.node-version }}
         registry-url: https://npm.pkg.github.com/
         scope: '@3dwardCh3nG'
-    - run: npm ci
+    - name: Install dependencies
+      run: npm ci
     - run: echo $CI
     - run: echo $NODE_AUTH_TOKEN
     - run: echo $GITHUB_TOKEN
-    - run: npx semantic-release --debug
-    - run: npm run build --if-present
-    - run: npm test
-    - run: npm publish
+    - name: Generate new version
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: npx semantic-release --debug
+    - name: Release
+      - run: npm run build --if-present
+      - run: npm test
+      - run: npm publish
       env:
         CI: true
         NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
