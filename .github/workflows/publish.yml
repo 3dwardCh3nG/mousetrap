@@ -28,9 +28,6 @@ jobs:
         scope: '@3dwardCh3nG'
     - name: Install dependencies
       run: npm ci
-    - run: echo $CI
-    - run: echo $NODE_AUTH_TOKEN
-    - run: echo $GITHUB_TOKEN
     - name: Generate new version
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
