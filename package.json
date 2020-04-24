@@ -1,6 +1,6 @@
 {
-  "name": "mousetrap",
-  "version": "1.6.5",
+  "name": "@3dwardCh3nG/mousetrap",
+  "version": "1.6.6-develop.1",
   "description": "Simple library for handling keyboard shortcuts",
   "main": "mousetrap.js",
   "directories": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ccampbell/mousetrap.git"
+    "url": "git://github.com/3dwardCh3nG/mousetrap.git"
   },
   "keywords": [
     "keyboard",
@@ -29,6 +29,24 @@
     "jsdom": "^13.1.0",
     "jsdom-global": "^3.0.2",
     "mocha": "^5.2.0",
-    "sinon": "^7.2.2"
+    "sinon": "^7.2.2",
+    "semantic-release": "^17.0.7"
+  },
+  "release": {
+    "branches": [
+      {
+        "name": "master",
+        "channel": "master",
+        "prerelease": false
+      },
+      {
+        "name": "develop",
+        "channel": "develop",
+        "prerelease": true
+      }
+    ]
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
   }
 }
