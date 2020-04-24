@@ -27,6 +27,7 @@ jobs:
         registry-url: https://npm.pkg.github.com/
         scope: '@3dwardCh3nG'
     - run: npm ci
+    - run: echo $GH_TOKEN
     - run: npx semantic-release --debug
     - run: npm run build --if-present
     - run: npm test
