@@ -1,5 +1,6 @@
 {
   "name": "@3dwardCh3nG/mousetrap",
+  "version": "0.0.0",
   "description": "Simple library for handling keyboard shortcuts",
   "main": "mousetrap.js",
   "directories": {
