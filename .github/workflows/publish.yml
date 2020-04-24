@@ -35,10 +35,9 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: npx semantic-release --debug
-    - name: Release
-      - run: npm run build --if-present
-      - run: npm test
-      - run: npm publish
+    - run: npm run build --if-present
+    - run: npm test
+    - run: npm publish
       env:
         CI: true
         NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
